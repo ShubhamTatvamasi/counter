@@ -14,8 +14,7 @@
   var account = "0xbe862AD9AbFe6f22BCb087716c7D89a26051f74C";
   var privateKey = "e331b6d69882b4cb4ea581d88e0b604039a3de5967688d3dcffdd2270c0fd109";
 
-  var web3 = new Web3(new Web3.providers.HttpProvider(
-    "https://rinkeby.infura.io/MxI3XE1XTy3obXg7dLp9"));
+  var web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/MxI3XE1XTy3obXg7dLp9"));
 
   web3.eth.getTransactionCount(account, function (err, nonce) {
     var data = web3.eth.contract(abi).at(address).increment.getData();
@@ -37,7 +36,6 @@
     });
   });
 </script>
-
 
 </body>
 </html>
