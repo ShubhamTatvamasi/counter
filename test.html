@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script src="https://cdn.rawgit.com/ethereumjs/browser-builds/master/dist/ethereumjs-wallet/ethereumjs-wallet-0.6.0.min.js"></script>
+
+<script>
+	
+var privateKey = "0xe331b6d69882b4cb4ea581d88e0b604039a3de5967688d3dcffdd2270c0fd109";
+
+var publicKeyBuff = ethereumjs.Util.privateToAddress(privateKey);
+
+var publicKey = ethereumjs.Util.bufferToHex(publicKeyBuff);
+
+var publicKeyCheckSum = ethereumjs.Util.toChecksumAddress(publicKey);
+
+// console.log(publicKeyCheckSum);
+
+var newWallet = ethereumjs.Wallet.generate();
+
+var newPublicKeyBuff = ethereumjs.Util.privateToAddress(newWallet.privKey);
+
+var newPrivateKey = ethereumjs.Util.bufferToHex(newWallet.privKey);
+var newPublicKey = ethereumjs.Util.bufferToHex(newPublicKeyBuff);
+
+var newPublicKeyCheckSum = ethereumjs.Util.toChecksumAddress(newPublicKey);
+
+console.log(newPrivateKey);
+console.log(newPublicKeyCheckSum);
+
+
+
+</script>
+
+</body>
+</html>

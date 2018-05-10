@@ -5,8 +5,8 @@
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.min.js"></script>
 <script src="https://cdn.rawgit.com/ethereumjs/browser-builds/master/dist/ethereumjs-wallet/ethereumjs-wallet-0.6.0.min.js"></script>
 <script>
-  var address = "0xE36dEAbCD2280092fe73B84d1321cFe39064Bc4A";
-  var abi = [{"constant":true,"inputs":[],"name":"count","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"increment","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}];
+  var address = "0x7A9F545E3E876e013C1854bDDB2eB6e6c36CB71f";
+  var abi = [{"constant":true,"inputs":[],"name":"count","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_num1","type":"uint256"},{"name":"_num2","type":"uint256"}],"name":"increment","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}];
 
   var account = "0xbe862AD9AbFe6f22BCb087716c7D89a26051f74C";
   var privateKey = "e331b6d69882b4cb4ea581d88e0b604039a3de5967688d3dcffdd2270c0fd109";
@@ -14,7 +14,7 @@
   var web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/MxI3XE1XTy3obXg7dLp9"));
 
   web3.eth.getTransactionCount(account, function (err, nonce) {
-    var data = web3.eth.contract(abi).at(address).increment.getData();
+    var data = web3.eth.contract(abi).at(address).increment.getData(5,6);
 
     var tx = new ethereumjs.Tx({
       nonce: nonce,
